@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "Good_news",
+    "name": "Good News",
     "slug": "Good_news",
+    
     "platforms": [
       "ios",
       "android",
@@ -9,20 +10,25 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/favicon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/logo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
+    "android": {
+      "package": "com.goodbook.goodnews",
+      "versionCode": 1
+    },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": ""
   }
 }
