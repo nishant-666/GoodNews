@@ -7,7 +7,7 @@ import Modal from '../../component/modal';
 
 import { getArticles } from '../../service/news';
 
-export default class Tab3 extends Component {
+export default class ListThumbnailExample extends Component {
 
   constructor(props) {
     super(props);
@@ -35,7 +35,7 @@ export default class Tab3 extends Component {
   }
 
   componentDidMount() {
-    getArticles('technology').then(data => {
+    getArticles('science').then(data => {
       this.setState({
         isLoading: false,
         data: data
@@ -50,10 +50,10 @@ export default class Tab3 extends Component {
     
 
     let view = this.state.isLoading ? (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Spinner color='red' />
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+         <Spinner color='red' />
       <Text style={{marginTop: 5}} children="Please wait.." />
-    </View>
+      </View>
     ) : (
       <List
         dataArray={this.state.data}

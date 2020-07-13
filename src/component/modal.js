@@ -18,7 +18,7 @@ class ModalComponent extends Component {
 
     handleShare = () => {
         const {url, title} = this.props.articleData;
-        message = `${title}\n\nRead More @${url}\n\nShared via GoodNews`;
+        const message = `${title}\n\n${url}\n\nDownload the GoodNews App:`;
         return Share.share(
             {title, message, url: message},
             {dialogTitle:`Share ${title}`}
@@ -40,7 +40,7 @@ class ModalComponent extends Component {
             >
                 
                 <Container style={{margin:15, marginBottom:0, backgroundColor:'#fff'}}>
-                    <Header style={{backgroundColor:'#2196f3'}}>
+                    <Header style={{backgroundColor:'#424242'}}>
                         <Left>
                             <Button onPress={this.handleClose} transparent>
                                 <Icon name="close" style={{color: 'white', fontSize: 22}}/>
@@ -58,7 +58,7 @@ class ModalComponent extends Component {
                         </Right>
                     </Header>
                     
-                    <Content contentContainerStyle={{height: webViewHeight}}>
+                    <Content contentContainerStyle={{height: '100%',}}>
                         <WebView source={{uri:url}} style={{flex: 1}}
                         onError={this.handleClose} startInLoadingState
                         
@@ -75,5 +75,4 @@ class ModalComponent extends Component {
     }
 }
 
-//make this component available to the app
 export default ModalComponent;

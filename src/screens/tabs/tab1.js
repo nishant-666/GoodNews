@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Alert, View, ActivityIndicator } from 'react-native';
-import { Container, Content, List, Text } from 'native-base';
+import { Container, Content, List, Text, Spinner } from 'native-base';
 
 import DataItem from '../../component/dataItem';
 import Modal from '../../component/modal';
@@ -35,7 +35,7 @@ export default class ListThumbnailExample extends Component {
   }
 
   componentDidMount() {
-    getArticles().then(data => {
+    getArticles('general').then(data => {
       this.setState({
         isLoading: false,
         data: data
@@ -47,12 +47,12 @@ export default class ListThumbnailExample extends Component {
   }
 
   render() {
-    console.log(this.state.data);
+    
 
     let view = this.state.isLoading ? (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <ActivityIndicator style={{margin:10}} animating={this.state.isLoading} color="#2196f3" />
-        <Text style={{marginTop: 10}} children="Please Wait.." />
+         <Spinner color='red' />
+      <Text style={{marginTop: 5}} children="Please wait.." />
       </View>
     ) : (
       <List

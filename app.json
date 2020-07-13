@@ -8,9 +8,9 @@
       "android",
       "web"
     ],
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
-    "icon": "./assets/favicon.png",
+    "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/logo.png",
       "resizeMode": "contain",
@@ -29,6 +29,6 @@
     "ios": {
       "supportsTablet": true
     },
-    "description": ""
+    "description": "A react native news app."
   }
 }
