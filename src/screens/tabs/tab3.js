@@ -35,7 +35,7 @@ export default class Tab3 extends Component {
   }
 
   componentDidMount() {
-    getArticles('technology').then(data => {
+    getArticles('health').then(data => {
       this.setState({
         isLoading: false,
         data: data

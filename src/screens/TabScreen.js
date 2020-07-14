@@ -38,21 +38,10 @@ export default class TabsExample extends Component {
           <Tab tabStyle={{backgroundColor:'#212121'}} activeTabStyle={{backgroundColor:'#212121'}} textStyle={{color:'white'}} heading={ <TabHeading><Icon style={{fontSize:20}} name="paper" active="true" /><Text style={{fontSize:15}}>Buisness</Text></TabHeading>}>
             <Tab2 />
           </Tab>
-          <Tab tabStyle={{backgroundColor:'#212121'}} activeTabStyle={{backgroundColor:'#212121'}} textStyle={{color:'white'}} heading={ <TabHeading><Icon style={{fontSize:20}} name="logo-apple" active="true" /><Text style={{fontSize:15}}>Technology</Text></TabHeading>}>
+          <Tab tabStyle={{backgroundColor:'#212121'}} activeTabStyle={{backgroundColor:'#212121'}} textStyle={{color:'white'}} heading={ <TabHeading><Icon style={{fontSize:20}} name="pulse" active="true" /><Text style={{fontSize:15}}>Health</Text></TabHeading>}>
             <Tab3 />
           </Tab>
-          <Tab tabStyle={{backgroundColor:'#212121'}} activeTabStyle={{backgroundColor:'#212121'}} textStyle={{color:'white'}} heading={ <TabHeading><Icon style={{fontSize:20}} name="baseball" active="true" /><Text style={{fontSize:15}}>Sports</Text></TabHeading>}>
-            <Tab4 />
-          </Tab>
-          <Tab tabStyle={{backgroundColor:'#212121'}} activeTabStyle={{backgroundColor:'#212121'}} textStyle={{color:'white'}} activeTextStyle={{color:'white'}}heading={ <TabHeading><Icon style={{fontSize:20}} name="film" active="true" /><Text style={{fontSize:15}}>Entertainment</Text></TabHeading>}>
-            <Tab5 />
-          </Tab>
-          <Tab tabStyle={{backgroundColor:'#212121'}} activeTabStyle={{backgroundColor:'#212121'}} textStyle={{color:'white'}} activeTextStyle={{color:'white'}} heading={ <TabHeading><Icon style={{fontSize:20}} name="pulse" active="true" /><Text style={{fontSize:15}}>Health</Text></TabHeading>}>
-            <Tab6 />
-          </Tab>
-          <Tab tabStyle={{backgroundColor:'#212121'}} activeTabStyle={{backgroundColor:'#212121'}} textStyle={{color:'white'}} activeTextStyle={{color:'white'}} heading={ <TabHeading><Icon style={{fontSize:20}} name="bulb" active="true" /><Text style={{fontSize:15}}>Science</Text></TabHeading>}>
-            <Tab7 />
-          </Tab>
+          
         </Tabs>
       </>
     );

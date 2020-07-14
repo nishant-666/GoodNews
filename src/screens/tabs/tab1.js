@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Alert, View, ActivityIndicator } from 'react-native';
+import { Alert, View } from 'react-native';
 import { Container, Content, List, Text, Spinner } from 'native-base';
 
 import DataItem from '../../component/dataItem';
