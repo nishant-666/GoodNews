@@ -5,7 +5,7 @@ enableScreens();
 export default class App extends Component {
   render() {
     return (
-      <TabScreen />
+      <TabScreen/>
     );
   }
 }

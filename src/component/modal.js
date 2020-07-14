@@ -18,7 +18,7 @@ class ModalComponent extends Component {
 
     handleShare = () => {
         const {url, title} = this.props.articleData;
-        const message = `${title}\n\n${url}\n\nDownload the GoodNews App:`;
+        const message = `${title}\n\n${url}\n\nDownload the GoodNews App: https://drive.google.com/drive/folders/1hi-SVArjC2eyl1v9d3wYqfSKiqc5pRvl?usp=sharing`;
         return Share.share(
             {title, message, url: message},
             {dialogTitle:`Share ${title}`}
@@ -37,13 +37,14 @@ class ModalComponent extends Component {
                 transparent
                 visible={showModal}
                 onRequestClose={this.handleClose}
+                
             >
                 
-                <Container style={{margin:15, marginBottom:0, backgroundColor:'#fff'}}>
-                    <Header style={{backgroundColor:'#424242'}}>
+                <Container style={{margin:15, marginBottom:0, backgroundColor:'#fff',borderRadius:20}}>
+                    <Header style={{backgroundColor:'#3f51b5',borderRadius:20,marginBottom:20,borderColor:"#1a237e"}}>
                         <Left>
                             <Button onPress={this.handleClose} transparent>
-                                <Icon name="close" style={{color: 'white', fontSize: 22}}/>
+                                <Icon name="close" style={{color: 'white', fontSize: 25}}/>
                             </Button>
                         </Left>
                         
@@ -53,7 +54,7 @@ class ModalComponent extends Component {
                         <Right>
                         
                             <Button onPress={this.handleShare} transparent>
-                                <Icon name="share" style={{color: 'white', fontSize: 22}}/>
+                                <Icon name="share" style={{color: 'white', fontSize: 25}}/>
                             </Button>
                         </Right>
                     </Header>
