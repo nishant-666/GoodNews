@@ -56,15 +56,16 @@ const AppTabNavigator = createBottomTabNavigator({
     Tech: {
         screen: Tech,
         navigationOptions:{
-            tabBarIcon:({tintColor})=><AntDesign name="apple-o" size={24} color={tintColor} />
+            tabBarIcon:({tintColor})=><AntDesign name="apple-o" size={24} color={tintColor}/>
         }
     }
 },
 {
     tabBarOptions:{
-        activeTintColor:'#212121',
-        inactiveTintColor:'#f44336',
+        activeTintColor:'#ef5350',
+        inactiveTintColor:'#616161',
         showLabel:true
+        
     }
 }
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Alert, View } from 'react-native';
-import { Container, Content, List, Text, Spinner } from 'native-base';
+import { Container, Content, List, Text, Spinner, H1 } from 'native-base';
 
 import DataItem from '../component/dataItem';
 import Modal from '../component/modal';
@@ -50,10 +50,10 @@ export default class ListThumbnailExample extends Component {
     
 
     let view = this.state.isLoading ? (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center',marginTop:20,}}>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center',marginTop:20}}>
           
-         <Spinner color='red' />
-      <Text style={{marginTop: 5}} children="Please wait.." />
+         <Spinner color='#ef5350' />
+      <Text children="Please wait.." />
       </View>
     ) : (
       <List style={{marginBottom:70 }}
@@ -67,8 +67,7 @@ export default class ListThumbnailExample extends Component {
 
     return (
       <Container>
-          <Content style={{paddingTop:40 }}>
-       
+          <Content style={{paddingTop:30 }}>
           {view}
         </Content>
         <Modal 

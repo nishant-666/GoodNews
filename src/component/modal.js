@@ -34,35 +34,38 @@ class ModalComponent extends Component {
           
            
             <Modal
-                animationType="slide"
-                transparent
+                animationType="fade"
+                transparent={true}
                 visible={showModal}
                 onRequestClose={this.handleClose}
+                fullScreen={true}
+                
                 
             >
                 
-                <Container style={{margin:15, marginBottom:0, backgroundColor:'#212121'}}>
-                    <Header style={{backgroundColor:'#fafafa',marginBottom:20}}>
+                <Container transparent>
+                    <Header style={{backgroundColor:'#3f51b5',color:'#fff'}}>
                         <Left>
                             <Button onPress={this.handleClose} transparent>
-                                <Icon name="close" style={{color: '#212121', fontSize: 25}}/>
+                                <Icon name="close" style={{color: '#eeeeee', fontSize: 25}}/>
                             </Button>
                         </Left>
                         
                         <Body>
-                            <Title children={articleData.title} style={{color: '#212121'}}/>
+                            <Title children={articleData.title} transparent style={{color: '#eeeeee'}}/>
                         </Body>
                         <Right>
                         
                             <Button onPress={this.handleShare} transparent>
-                                <Icon name="share" style={{color: '#212121', fontSize: 25}}/>
+                                <Icon name="share" style={{color: '#eeeeee', fontSize: 25}}/>
                             </Button>
                         </Right>
                     </Header>
                     
-                    <Content contentContainerStyle={{height: '100%',}}>
-                        <WebView source={{uri:url}} style={{flex: 1}}
-                        onError={this.handleClose} startInLoadingState
+                    <Content contentContainerStyle={{height: '100%'}}>
+                        <WebView source={{uri:url}}
+                        onError={this.handleClose} 
+                        startInLoadingState
                         
                         />
                     </Content>

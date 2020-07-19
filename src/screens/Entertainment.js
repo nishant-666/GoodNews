@@ -51,7 +51,7 @@ export default class ListThumbnailExample extends Component {
 
     let view = this.state.isLoading ? (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center',marginTop:20 }}>
-         <Spinner color='red' />
+         <Spinner color='#03a9f4' />
       <Text style={{marginTop: 5}} children="Please wait.." />
       </View>
     ) : (
@@ -66,7 +66,7 @@ export default class ListThumbnailExample extends Component {
 
     return (
       <Container>
-        <Content style={{paddingTop:40 }}>
+        <Content style={{paddingTop:30 }}>
         
           {view}
         </Content>
