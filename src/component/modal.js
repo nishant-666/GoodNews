@@ -7,6 +7,7 @@ const webViewHeight = Dimensions.get('window').height ;
 
 // create a component
 class ModalComponent extends Component {
+    
 
     constructor(props) {
         super(props);
@@ -40,21 +41,21 @@ class ModalComponent extends Component {
                 
             >
                 
-                <Container style={{margin:15, marginBottom:0, backgroundColor:'#fff',borderRadius:20}}>
-                    <Header style={{backgroundColor:'#3f51b5',borderRadius:20,marginBottom:20,borderColor:"#1a237e"}}>
+                <Container style={{margin:15, marginBottom:0, backgroundColor:'#212121'}}>
+                    <Header style={{backgroundColor:'#fafafa',marginBottom:20}}>
                         <Left>
                             <Button onPress={this.handleClose} transparent>
-                                <Icon name="close" style={{color: 'white', fontSize: 25}}/>
+                                <Icon name="close" style={{color: '#212121', fontSize: 25}}/>
                             </Button>
                         </Left>
                         
                         <Body>
-                            <Title children={articleData.title} style={{color: 'white'}}/>
+                            <Title children={articleData.title} style={{color: '#212121'}}/>
                         </Body>
                         <Right>
                         
                             <Button onPress={this.handleShare} transparent>
-                                <Icon name="share" style={{color: 'white', fontSize: 25}}/>
+                                <Icon name="share" style={{color: '#212121', fontSize: 25}}/>
                             </Button>
                         </Right>
                     </Header>

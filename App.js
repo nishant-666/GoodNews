@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import TabScreen from './src/screens/TabScreen';
 import { enableScreens } from 'react-native-screens';
+import Main from './src/screens/main'
 enableScreens();
 
 export default class App extends Component {
   
   render() {
     return (
-      <TabScreen/>
+      <Main/>
     );
   }
 }

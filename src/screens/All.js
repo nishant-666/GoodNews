@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Alert, View, ActivityIndicator } from 'react-native';
+import { Alert, View } from 'react-native';
 import { Container, Content, List, Text, Spinner } from 'native-base';
 
-import DataItem from '../../component/dataItem';
-import Modal from '../../component/modal';
+import DataItem from '../component/dataItem';
+import Modal from '../component/modal';
 
-import { getArticles } from '../../service/news';
+import { getArticles } from '../service/news';
 
 export default class ListThumbnailExample extends Component {
 
@@ -35,7 +35,7 @@ export default class ListThumbnailExample extends Component {
   }
 
   componentDidMount() {
-    getArticles('science').then(data => {
+    getArticles('general').then(data => {
       this.setState({
         isLoading: false,
         data: data
@@ -50,12 +50,13 @@ export default class ListThumbnailExample extends Component {
     
 
     let view = this.state.isLoading ? (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center',marginTop:20,}}>
+          
          <Spinner color='red' />
       <Text style={{marginTop: 5}} children="Please wait.." />
       </View>
     ) : (
-      <List
+      <List style={{marginBottom:70 }}
         dataArray={this.state.data}
         renderRow={(item) => {
             return (
@@ -66,7 +67,8 @@ export default class ListThumbnailExample extends Component {
 
     return (
       <Container>
-        <Content>
+          <Content style={{paddingTop:40 }}>
+       
           {view}
         </Content>
         <Modal 
