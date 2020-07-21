@@ -15,8 +15,9 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
+
 const AppTabNavigator = createBottomTabNavigator({
-    All: {
+    Everything: {
         screen: All,
         
         navigationOptions:{
@@ -63,8 +64,11 @@ const AppTabNavigator = createBottomTabNavigator({
 {
     tabBarOptions:{
         activeTintColor:'#ef5350',
-        inactiveTintColor:'#616161',
-        showLabel:true
+        inactiveTintColor:'#eeeeee',
+        showLabel:true,
+        style: {
+            backgroundColor: '#212121',
+          },
         
     }
 }

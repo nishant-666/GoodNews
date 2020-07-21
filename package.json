@@ -7,17 +7,23 @@
     "web": "expo start --web",
     "eject": "expo eject"
   },
+  "rnpm": {
+    "assets": [
+      "./assets/fonts"
+    ]
+  },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.6",
     "expo": "~37.0.3",
     "expo-cli": "^3.22.1",
-    "expo-font": "~8.1.0",
     "moment": "^2.26.0",
     "native-base": "^2.13.12",
     "react": "~16.9.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
+    "react-native-custom-fonts": "^1.2.0-beta.1",
+    "react-native-elements": "^2.0.4",
     "react-native-gesture-handler": "~1.6.0",
-    "react-native-google-analytics-bridge": "^7.1.0",
+    "react-native-paper": "^4.0.1",
     "react-native-reanimated": "^1.9.0",
     "react-native-safe-area-context": "0.7.3",
     "react-native-screens": "^2.9.0",

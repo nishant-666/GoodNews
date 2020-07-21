@@ -1,6 +1,6 @@
 //import libraries
 import React, { Component } from 'react';
-import { Dimensions, Modal, Share} from 'react-native';
+import { Dimensions, Modal, Share, View, StatusBar} from 'react-native';
 import {Container, Header, Content, Body, Left, Icon, Right, Title, Button} from 'native-base';
 import { WebView } from 'react-native-webview';
 const webViewHeight = Dimensions.get('window').height ;
@@ -31,8 +31,12 @@ class ModalComponent extends Component {
         const { url } = articleData;
         if( url != undefined ) {
         return (
-          
-           
+          <View>  
+           <StatusBar   
+           translucent = {true}
+            barStyle = "dark-content"
+            hidden = {true}   
+          />  
             <Modal
                 animationType="fade"
                 transparent={true}
@@ -44,7 +48,8 @@ class ModalComponent extends Component {
             >
                 
                 <Container transparent>
-                    <Header style={{backgroundColor:'#3f51b5',color:'#fff'}}>
+                  
+                    <Header style={{backgroundColor:"#212121"}}>
                         <Left>
                             <Button onPress={this.handleClose} transparent>
                                 <Icon name="close" style={{color: '#eeeeee', fontSize: 25}}/>
@@ -52,7 +57,7 @@ class ModalComponent extends Component {
                         </Left>
                         
                         <Body>
-                            <Title children={articleData.title} transparent style={{color: '#eeeeee'}}/>
+                            <Title children={articleData.title} style={{color: '#eeeeee'}}/>
                         </Body>
                         <Right>
                         
@@ -72,7 +77,7 @@ class ModalComponent extends Component {
                   
                 </Container>
             </Modal>
-          
+          </View>
         );
         } else {
             return null;
