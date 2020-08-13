@@ -1,29 +1,24 @@
 import React, { Component } from 'react';
-import { Alert, View, StatusBar } from 'react-native';
+import { Alert, View  } from 'react-native';
 import { Container, Content, List, Text, Spinner, Header } from 'native-base';
-import { FontAwesome5 } from '@expo/vector-icons';
 import DataItem from '../component/dataItem';
+import { StatusBar } from 'expo-status-bar';
 import Modal from '../component/modal';
 import * as Font from 'expo-font';
 import { getArticles } from '../service/news';
-
 let customFonts = {
   'Sacramento': require('../../assets/fonts/Sacramento-Regular.ttf'),
-  'Roboto': require('../../assets/fonts/Roboto-Black.ttf'),
-  
+  'Lato': require('../../assets/fonts/Lato-LightItalic.ttf'),
+  'Balu': require('../../assets/fonts/BalooTamma2-Regular.ttf'),
 };
-
-
 export default class ListThumbnailExample extends Component {
   state = {
     fontsLoaded: false,
   };
-
   async _loadFontsAsync() {
     await Font.loadAsync(customFonts);
     this.setState({ fontsLoaded: true });
   }
-
   constructor(props) {
     super(props);
 
@@ -66,17 +61,14 @@ export default class ListThumbnailExample extends Component {
     
 
     let view = this.state.isLoading ? (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center',marginTop:20}}>
-          <StatusBar   
-           translucent = {true}
-            barStyle = "dark-content"
-            hidden = {true}   
-          />  
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center',marginTop:20 }}>
+        <View>
          <Spinner color='#ef5350' />
-      <Text children="Please wait.." />
+         <Text style={{marginTop: 5, fontFamily:'Balu', fontSize:20}} children="Please wait while we load news for you.." />
+         </View>
       </View>
     ) : (
-      <List
+        <List
         dataArray={this.state.data}
         renderRow={(item) => {
             return (
@@ -86,17 +78,11 @@ export default class ListThumbnailExample extends Component {
     )
 
     return (
-      <Container transparent>
-         <StatusBar   
-           transparent = {true}
-            barStyle = "dark-content"
-            hidden = {true}   
-          />  
-        <Header style={{backgroundColor:"#212121",marginBottom:30}}>    
-          <Text style={{color:"#ef5350",backgroundColor:"#212121", fontSize:50,marginTop:14, marginBottom:-15,fontFamily: 'Sacramento'}}>GoodNews</Text>
-        </Header>
-          <Content>
-          {view}
+      <Container>  
+        <StatusBar style="light" />
+        <Text style={{color:"#ef5350",fontSize:45,marginTop:50,marginBottom:10,fontFamily: 'Sacramento',width:'100%',textAlign:'center'}}>GoodNews</Text>
+        <Content>
+         {view}
         </Content>
         <Modal 
           showModal={this.state.setModalVisible}

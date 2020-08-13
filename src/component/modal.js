@@ -1,13 +1,26 @@
 //import libraries
 import React, { Component } from 'react';
-import { Dimensions, Modal, Share, View, StatusBar} from 'react-native';
-import {Container, Header, Content, Body, Left, Icon, Right, Title, Button} from 'native-base';
+import { Dimensions, Modal, Share, View} from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import {Container, Header, Content, Body, Left, Icon, Right, Title, Button, Text} from 'native-base';
 import { WebView } from 'react-native-webview';
+import { Feather } from '@expo/vector-icons';
+let customFonts = {
+    'Sacramento': require('../../assets/fonts/Sacramento-Regular.ttf'),
+    'Lato': require('../../assets/fonts/Lato-LightItalic.ttf'),
+    'Balu': require('../../assets/fonts/BalooTamma2-Regular.ttf'),
+  };
 const webViewHeight = Dimensions.get('window').height ;
 
 // create a component
 class ModalComponent extends Component {
-    
+    state = {
+        fontsLoaded: false,
+      };
+      async _loadFontsAsync() {
+        await Font.loadAsync(customFonts);
+        this.setState({ fontsLoaded: true });
+      }
 
     constructor(props) {
         super(props);
@@ -16,7 +29,9 @@ class ModalComponent extends Component {
     handleClose = () => {
         return this.props.onClose();
     }
-
+    componentDidMount() {
+        this._loadFontsAsync();
+      }
     handleShare = () => {
         const {url, title} = this.props.articleData;
         const message = `${title}\n\n${url}\n\nDownload the GoodNews App: https://drive.google.com/drive/folders/1hi-SVArjC2eyl1v9d3wYqfSKiqc5pRvl?usp=sharing`;
@@ -31,14 +46,10 @@ class ModalComponent extends Component {
         const { url } = articleData;
         if( url != undefined ) {
         return (
-          <View>  
-           <StatusBar   
-           translucent = {true}
-            barStyle = "dark-content"
-            hidden = {true}   
-          />  
+          <View style={{flex:1}}>  
+            <StatusBar style="dark" />
             <Modal
-                animationType="fade"
+                animationType="slide"
                 transparent={true}
                 visible={showModal}
                 onRequestClose={this.handleClose}
@@ -46,26 +57,24 @@ class ModalComponent extends Component {
                 
                 
             >
-                
+               
                 <Container transparent>
-                  
-                    <Header style={{backgroundColor:"#212121"}}>
-                        <Left>
-                            <Button onPress={this.handleClose} transparent>
-                                <Icon name="close" style={{color: '#eeeeee', fontSize: 25}}/>
-                            </Button>
-                        </Left>
-                        
-                        <Body>
-                            <Title children={articleData.title} style={{color: '#eeeeee'}}/>
-                        </Body>
+                    <View style={{flexDirection:'row',marginTop:10}}>
+                        <Button onPress={this.handleClose} transparent>
+                            <Feather name="arrow-left-circle" size={28} color='#212121' style={{marginLeft:20}}/>
+                        </Button>
                         <Right>
+                        <Button onPress={this.handleShare} transparent>
+                            <Feather name="share" size={28} color='#212121' style={{marginRight:20}}/>
+                        </Button>
+                    </Right>
+                    </View>
+                <View style={{alignItems:'center',padding:20}}>
+                    <Text style={{fontFamily:'Balu',fontSize:20}}>{articleData.title}</Text>
+                </View>
+                    
                         
-                            <Button onPress={this.handleShare} transparent>
-                                <Icon name="share" style={{color: '#eeeeee', fontSize: 25}}/>
-                            </Button>
-                        </Right>
-                    </Header>
+                   
                     
                     <Content contentContainerStyle={{height: '100%'}}>
                         <WebView source={{uri:url}}

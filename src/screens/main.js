@@ -16,24 +16,25 @@ import { AntDesign } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 
+import { Feather } from '@expo/vector-icons';
 const AppTabNavigator = createBottomTabNavigator({
     Everything: {
         screen: All,
         
         navigationOptions:{
-            tabBarIcon:({tintColor})=><MaterialIcons name="grid-on" size={24} color={tintColor} />
+            tabBarIcon:({tintColor})=><Feather name="grid" size={24} color={tintColor}/>
         }
     },
     Business: {
         screen: Business,
         navigationOptions:{
-            tabBarIcon:({tintColor})=><MaterialCommunityIcons name="newspaper" size={24} color={tintColor} />
+            tabBarIcon:({tintColor})=><Feather name="briefcase" size={24} color={tintColor}/>
         }
     },
     Health: {
         screen: Health,
         navigationOptions:{
-            tabBarIcon:({tintColor})=><Ionicons name = "md-pulse" size={24} color={tintColor}></Ionicons>
+            tabBarIcon:({tintColor})=><Feather name="activity" size={24} color={tintColor}/>
         }
     },
     Sports: {
@@ -45,7 +46,7 @@ const AppTabNavigator = createBottomTabNavigator({
     Entertainment: {
         screen: Entertainment,
         navigationOptions:{
-            tabBarIcon:({tintColor})=><MaterialCommunityIcons name="filmstrip" size={24} color={tintColor}/>
+            tabBarIcon:({tintColor})=><Feather name="film" size={24} color={tintColor}/>
         }
     },
     Science: {
@@ -57,17 +58,19 @@ const AppTabNavigator = createBottomTabNavigator({
     Tech: {
         screen: Tech,
         navigationOptions:{
-            tabBarIcon:({tintColor})=><AntDesign name="apple-o" size={24} color={tintColor}/>
+            tabBarIcon:({tintColor})=><Feather name="smartphone" size={24} color={tintColor}/>
         }
     }
 },
 {
     tabBarOptions:{
-        activeTintColor:'#ef5350',
-        inactiveTintColor:'#eeeeee',
+        activeTintColor:'#00072D',
+        
+        inactiveTintColor:'#2196f3',
         showLabel:true,
         style: {
-            backgroundColor: '#212121',
+            backgroundColor: "white",
+            borderTopColor: "white",
           },
         
     }
@@ -80,7 +83,7 @@ export default createAppContainer(
     createSwitchNavigator(
         {
             App:AppTabNavigator,
-    
+           
         }
     )
 )
